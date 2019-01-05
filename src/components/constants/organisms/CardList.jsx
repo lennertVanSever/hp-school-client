@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 
 const Section = styled.section`
-  margin-left: 20px;
   margin-top: 20px;
 `;
 
@@ -16,12 +15,18 @@ const ChildWrapper = styled.div`
 const Title = styled.h1`
   font-size: 20pt;
   font-weight: bold;
+  margin-bottom: 2px;
+`;
+
+const Subtitle = styled.h3`
+  font-size: 14pt;
   margin-bottom: 10px;
 `;
 
-export default ({ title, list, children }) => (
+export default ({ title, subtitle, children }) => (
   <Section>
     <Title>{title}</Title>
+    <Subtitle>{subtitle}</Subtitle>
     <ChildWrapper>
       {children}
     </ChildWrapper>

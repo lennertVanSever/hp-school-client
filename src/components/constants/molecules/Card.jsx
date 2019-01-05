@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 
 const Article = styled.article`
   background-color: white;
   width: 100%;
-  max-width: 250px;
+  max-width: 300px;
   height: 150px;
   padding: 10px;
   box-sizing: border-box;
@@ -20,17 +21,19 @@ const Title = styled.h2`
 
 const Li = styled.li`
   opacity: .7;
+  margin: 5px 0px;
 `;
 
 function generateList(list) {
-  return list.map(item => (
-    <Li>{ item }</Li>
+  return list.map((item, index) => (
+    // eslint-disable-next-line react/no-array-index-key
+    <Li key={index}>{ item }</Li>
   ));
 }
 
 export default ({ title, list }) => (
   <Article>
-    <Title>{title}</Title>
+    <Link to="/school"><Title>{title}</Title></Link>
     <ul>
       {generateList(list)}
     </ul>

@@ -9,5 +9,8 @@
     "webextensions": false,
     "jest": true
   },
+  "rules": {
+    "camelcase": "off",
+  },
   "extends": ["airbnb"]
 }
