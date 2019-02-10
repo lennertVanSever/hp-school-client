@@ -5,6 +5,7 @@ import { CardList } from '../constants/organisms';
 const generateSchools = schools => (
   schools.map(({
     name,
+    id,
     city,
     postal_code,
     street,
@@ -16,6 +17,7 @@ const generateSchools = schools => (
     <Card
       key={name}
       title={name}
+      to={`/school/${id}`}
       list={[
         `${city} ${postal_code}`,
         `${street} ${street_number}`,
@@ -30,6 +32,7 @@ const generateSchools = schools => (
 const generateSchoolGroups = schoolGroups => (
   schoolGroups.map(({
     name,
+    id,
     city,
     street,
     street_number,
@@ -39,6 +42,7 @@ const generateSchoolGroups = schoolGroups => (
     <Card
       key={name}
       title={name}
+      to={`/school-group/${id}`}
       list={[
         `${city} ${postal_code}`,
         `${street} ${street_number}`,
@@ -51,11 +55,13 @@ const generateSchoolGroups = schoolGroups => (
 const generatePartners = partners => (
   partners.map(({
     name,
+    id,
     education_focused,
   }) => (
     <Card
       key={name}
       title={name}
+      to={`/partner/${id}`}
       list={[
         `Education focused: ${education_focused}`,
       ]}
@@ -81,19 +87,19 @@ export default ({ query }) => {
   return [
     shouldGenerateList(
       schools,
-      <CardList title="Schools" subtitle={`${schools.length} results`}>
+      <CardList entity={{ name: 'school', method: 'add' }} title="Schools" subtitle={`${schools.length} results`}>
         {generateSchools(schools)}
       </CardList>,
     ),
     shouldGenerateList(
       school_groups,
-      <CardList title="School groups" subtitle={`${school_groups.length} results`}>
+      <CardList entity={{ name: 'school_group', method: 'add' }} title="School groups" subtitle={`${school_groups.length} results`}>
         {generateSchoolGroups(school_groups)}
       </CardList>,
     ),
     shouldGenerateList(
       partners,
-      <CardList title="Partners" subtitle={`${partners.length} results`}>
+      <CardList entity={{ name: 'partner', method: 'add' }} title="Partners" subtitle={`${partners.length} results`}>
         {generatePartners(partners)}
       </CardList>,
     ),

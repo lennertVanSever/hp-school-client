@@ -31,9 +31,9 @@ function generateList(list) {
   ));
 }
 
-export default ({ title, list }) => (
+export default ({ title, list, to }) => (
   <Article>
-    <Link to="/school"><Title>{title}</Title></Link>
+    <Link to={to}><Title>{title}</Title></Link>
     <ul>
       {generateList(list)}
     </ul>

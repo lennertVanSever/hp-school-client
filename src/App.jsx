@@ -13,7 +13,7 @@ const typeDefs = `
 `;
 
 const client = new ApolloClient({
-  uri: 'http://localhost:5000/graphql',
+  uri: 'https://hp-education-server.herokuapp.com/graphql',
   clientState: {
     defaults: {
       search: '',

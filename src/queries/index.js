@@ -1,5 +1,7 @@
 /* eslint-disable import/prefer-default-export */
-import getSchools from './getOverview';
+import getOverview from './getOverview';
+import getSchool from './getSchool';
 import getSearch from './getSearch';
+import getPartner from './getPartner';
 
-export { getSchools, getSearch };
+export { getOverview, getSearch, getSchool, getPartner };
